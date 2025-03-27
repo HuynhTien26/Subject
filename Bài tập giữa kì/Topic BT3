@@ -1,0 +1,4 @@
+Cho dãy xn được định nghĩa như sau:
+   x0 = 1, x1 = 1
+   xn = nx0+nx1+ ... + nxn-1, với mọi n > 1
+Viết hàm tính xn dùng đệ quy và không dùng đệ quy 
