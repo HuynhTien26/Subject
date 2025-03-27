@@ -2,3 +2,8 @@ Cho dãy xn được định nghĩa như sau:
    x0 = 1, x1 = 1
    xn = nx0+nx1+ ... + nxn-1, với mọi n > 1
 Viết hàm tính xn dùng đệ quy và không dùng đệ quy 
+------------Idea------------
+Với dãy Xn được định nghĩa trên, có thể ra được công thức truy hồi: Xn = n*(tổng x chạy từ 0 tới n-1)
+Bài toán con nhỏ nhất của dãy trên là khi x0=1 và x1=0 tức 
+int truyhoi(int n){
+if(n==1 ||n==0){ return 1;}
