@@ -1,0 +1,5 @@
+Viết chương trình nhập vào một chuỗi ký tự từ bàn phím. (Giả sử rằng mỗi từ trong chuỗi cách nhau một khoảng trắng. Không có khoảng trắng ở đầu và cuối chuỗi) và thực hiện các yêu cầu sau đây:
+a) Đếm trong chuỗi có bao nhiêu ký tự là nguyên âm, phụ âm. (Các ký tự nguyên âm là: a,e,i,o,u  hoặc A,E,I,O,U)  
+b) Tách chuỗi thành các từ và đếm xem chuỗi có bao nhiêu từ. Đếm xem mỗi từ trong chuỗi có bao nhiêu ký tự
+c) Đếm xem mỗi từ trong chuỗi xuất hiện bao nhiêu lần.
+d) Nhập vào một ký tự. Xóa tất cả các vị trí mà ký tự đó xuất hiện trong chuỗi
