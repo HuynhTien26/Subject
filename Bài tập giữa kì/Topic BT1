@@ -1,0 +1,15 @@
+Cho một file văn bản chứa các số nguyên dương có cấu trúc như sau:
+Dòng 1: ghi 2 số nguyên dương m, n 
+m dòng còn lại, mỗi dòng ghi n số nguyên dương . Các số cách nhau ít nhất một khoảng trắng
+
+Ví dụ: file test.txt 
+2 3
+10 5 21
+30 4 11
+
+a) Đọc dữ liệu từ file, lưu vào mảng 2 chiều A (yêu cầu dùng cấp phát động/mảng động). 
+b) Tìm số lớn nhất, lớn nhì trong mảng.
+c) Tính tổng các phần tử trên mỗi cột.
+d) Tạo mảng C từ mảng A sao cho  cij = aij * ki với ki là số nhỏ nhất trong dòng i.
+Yêu cầu ghi kết quả ra file output.txt. 
+* Lưu ý: Viết đầy đủ chương trình có hàm main(). Kết thúc chương trình phải thu hồi vùng nhớ.
