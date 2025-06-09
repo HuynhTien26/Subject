@@ -1,4 +1,4 @@
-#Có 4 tiến trình
+# Có 4 tiến trình
 
 **1.FCFS/FIFO (đến trước xử lý trước)**
 
