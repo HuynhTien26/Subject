@@ -2,5 +2,5 @@
 
 Chào mừng đến với repo lưu trữ các môn học!
 
-- [Kỹ thuật lập trình](https://github.com/HuynhTien26/Subject/tree/KTLT)
-- [Hệ điều hành](./Operating-Systems)
+- [💻 Kỹ thuật lập trình](https://github.com/HuynhTien26/Subject/tree/KTLT)
+- [⚙️ Hệ điều hành](https://github.com/HuynhTien26/Subject/tree/Operating-Systems)
