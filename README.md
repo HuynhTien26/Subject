@@ -1,5 +1,1 @@
-# Danh sách môn học
 
-Chào mừng đến với repo lưu trữ các môn học liên quan tới lập trình!
-- [💻 Kỹ thuật lập trình](https://github.com/HuynhTien26/Subject/tree/KTLT)
-- [⚙️ Hệ điều hành](https://github.com/HuynhTien26/Subject/tree/Operating-Systems)
