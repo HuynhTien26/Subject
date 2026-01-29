@@ -15,6 +15,7 @@ Chào mừng đến với repo lưu trữ các môn học liên quan tới lập
 - [📱 Lập trình web và ứng dụng](https://github.com/HuynhTien26/Subject/tree/Lập-trình-web-và-ứng-dụng)
 - [📊 Lý thuyết đồ thị](https://github.com/HuynhTien26/Subject/tree/Lý-thyết-đồ-thị)
 - [🎨 Mỹ thuật ứng dụng trong CNTT](https://github.com/HuynhTien26/Subject/tree/Mỹ-thuật-ứng-dụng-trong-CNTT)
+- [⌨️ Nhập môn công nghệ thông tin & truyền thông](https://github.com/HuynhTien26/Subject/tree/Nhập-môn-công-nghệ-thông-tin-&-truyền-thông)
 - [🛠️ Phân tích thiết kế hướng đối tượng](https://github.com/HuynhTien26/Subject/tree/Phân-tích-thiết-kế-hướng-đối-tượng)
 - [🧠 Phân tích thiết kế hệ thống thông tin](https://github.com/HuynhTien26/Subject/tree/Phân-tích-thiết-kế-hệ-thống-thông-tin)
 - [🧩 Phương pháp lập trình hướng đối tượng](https://github.com/HuynhTien26/Subject/tree/Phương-pháp-lập-trình-hướng-đối-tượng)
