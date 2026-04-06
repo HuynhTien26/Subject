@@ -1,21 +1,29 @@
 # Danh sách môn học
 
 Chào mừng đến với repo lưu trữ các môn học liên quan tới lập trình!
-- [🗄️ Các hệ quản trị cơ sở dữ liệu](https://github.com/HuynhTien26/Subject/tree/C%C3%A1c-h%E1%BB%87-qu%E1%BA%A3n-tr%E1%BB%8B-c%C6%A1-s%E1%BB%9F-d%E1%BB%AF-li%E1%BB%87u)
-- [🌍 Cơ sở dữ liệu phân tán](https://github.com/HuynhTien26/Subject/tree/C%C6%A1-s%E1%BB%9F-d%E1%BB%AF-li%E1%BB%87u-ph%C3%A2n-t%C3%A1n)
-- [🗃️ Cơ sở dữ liệu nâng cao](https://github.com/HuynhTien26/Subject/tree/C%C6%A1-s%E1%BB%9F-d%E1%BB%AF-li%E1%BB%87u-n%C3%A2ng-cao)
-- [🤖 Cơ sở trí tuệ nhân tạo](https://github.com/HuynhTien26/Subject/tree/C%C6%A1-s%E1%BB%9F-tr%C3%AD-tu%E1%BB%87-nh%C3%A2n-t%E1%BA%A1o)
-- [🏬 Công nghệ phần mềm](https://github.com/HuynhTien26/Subject/tree/C%C3%B4ng-ngh%E1%BB%87-ph%E1%BA%A7n-m%E1%BB%81m)
+# Danh sách môn học
+
+Chào mừng đến với repo lưu trữ các môn học liên quan tới lập trình!
+
+- [🗄️ Các hệ quản trị cơ sở dữ liệu](https://github.com/HuynhTien26/Subject/tree/he-quan-tri-csdl)
+- [🌍 Cơ sở dữ liệu phân tán](https://github.com/HuynhTien26/Subject/tree/csdlpt)
+- [🗃️ Cơ sở dữ liệu nâng cao](https://github.com/HuynhTien26/Subject/tree/csdl-nang-cao)
+- [🤖 Cơ sở trí tuệ nhân tạo](https://github.com/HuynhTien26/Subject/tree/csttnt)
+- [🏬 Công nghệ phần mềm](https://github.com/HuynhTien26/Subject/tree/cnpm)
 - [⚙️ Hệ điều hành](https://github.com/HuynhTien26/Subject/tree/Operating-Systems)
 - [🐧 Hệ điều hành mã nguồn mở](https://github.com/HuynhTien26/Subject/tree/Open-source-operating-system)
-- [🧪 Kiểm thử phần mềm](https://github.com/HuynhTien26/Subject/tree/Ki%E1%BB%83m-th%E1%BB%AD-ph%E1%BA%A7n-m%E1%BB%81m)
-- [🏛️ Kiến trúc phần mềm](https://github.com/HuynhTien26/Subject/tree/Ki%E1%BA%BFn-tr%C3%BA-ph%E1%BA%A7n-m%E1%BB%81m)
+- [🧪 Kiểm thử phần mềm](https://github.com/HuynhTien26/Subject/tree/kiem-thu-phan-mem)
+- [🏛️ Kiến trúc phần mềm](https://github.com/HuynhTien26/Subject/tree/ktpm)
 - [💻 Kỹ thuật lập trình](https://github.com/HuynhTien26/Subject/tree/KTLT)
 - [👨‍👩‍👧‍👦 Lập trình hướng đối tượng](https://github.com/HuynhTien26/Subject/tree/OOP)
-- [🌐 Lập trình web và ứng dụng](https://github.com/HuynhTien26/Subject/tree/L%E1%BA%ADp-tr%C3%ACnh-web-v%C3%A0-%E1%BB%A9ng-d%E1%BB%A5ng)
-- [📊 Lý thuyết đồ thị](https://github.com/HuynhTien26/Subject/tree/L%C3%BD-thuy%E1%BA%BFt-%C4%91%E1%BB%93-th%E1%BB%8B)
-- [🎨 Mỹ thuật ứng dụng trong CNTT](https://github.com/HuynhTien26/Subject/tree/M%E1%BB%B9-thu%E1%BA%ADt-%E1%BB%A9ng-d%E1%BB%A5ng-trong-CNTT)
-- [📧 Nhập môn công nghệ thông tin & truyền thông](https://github.com/HuynhTien26/Subject/tree/Nh%E1%BA%ADp-m%C3%B4n-c%C3%B4ng-ngh%E1%BB%87-th%C3%B4ng-tin-&-truy%E1%BB%81n-th%C3%B4ng)
+- [🌐 Lập trình web và ứng dụng](https://github.com/HuynhTien26/Subject/tree/lap-trinh-web-va-ung-dung)
+- [📊 Lý thuyết đồ thị](https://github.com/HuynhTien26/Subject/tree/ltdt)
+- [🎨 Mỹ thuật ứng dụng trong CNTT](https://github.com/HuynhTien26/Subject/tree/my-thuat-ung-dung-trong-cntt)
+- [📧 Nhập môn công nghệ thông tin & truyền thông](https://github.com/HuynhTien26/Subject/tree/nmcntt&tt)
+- [🧩 Phân tích thiết kế hướng đối tượng](https://github.com/HuynhTien26/Subject/tree/pttk-huong-doi-tuong)
+- [🧠 Phân tích thiết kế hệ thống thông tin](https://github.com/HuynhTien26/Subject/tree/pttkhttt)
+- [🚀 Phương pháp lập trình hướng đối tượng](https://github.com/HuynhTien26/Subject/tree/pplthdt)
+- [📐 Thiết kế và phân tích giải thuật](https://github.com/HuynhTien26/Subject/tree/tk&ptgt)
 - [🧩 Phân tích thiết kế hướng đối tượng](https://github.com/HuynhTien26/Subject/tree/Ph%C3%A2n-t%C3%ADch-thi%E1%BA%BFt-k%E1%BA%BF-h%C6%B0%E1%BB%9Bng-%C4%91%E1%BB%91i-t%C6%B0%E1%BB%A3ng)
 - [🧠 Phân tích thiết kế hệ thống thông tin](https://github.com/HuynhTien26/Subject/tree/Ph%C3%A2n-t%C3%ADch-thi%E1%BA%BFt-k%E1%BA%BF-h%E1%BB%87-th%E1%BB%91ng-th%C3%B4ng-tin)
 - [🚀 Phương pháp lập trình hướng đối tượng](https://github.com/HuynhTien26/Subject/tree/Ph%C6%B0%C6%A1ng-ph%C3%A1p-l%E1%BA%ADp-tr%C3%ACnh-h%C6%B0%E1%BB%9Bng-%C4%91%E1%BB%91i-t%C6%B0%E1%BB%A3ng)
