@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinamilk - Xuất Hàng</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="logo-container">
+            <img src="img/logo-vinamilk.jpg" alt="Vinamilk Logo" class="sidebar-logo">
+            <h3>Hệ thống quản lý đại lý Vinamilk</h3>
+        </div>
+        
+        <nav class="nav-menu">
+            <a href="khach-hang.html" class="nav-link active"><i class="fas fa-users"></i> Khách hàng</a>
+            <a href="nhap-hang.html" class="nav-link"><i class="fas fa-arrow-right-to-bracket"></i> Nhập hàng</a>
+            <a href="xuat-hang.html" class="nav-link active"><i class="fas fa-arrow-right-from-bracket"></i> Xuất hàng</a>
+            <a href="kho-hang.html" class="nav-link"><i class="fas fa-box"></i> Kho hàng</a>
+            <a href="bao-cao.html" class="nav-link"><i class="fas fa-chart-bar"></i> Báo cáo</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <header>
+            <div class="user-profile">
+                <div class="user-info">
+                    <h4>Quản trị viên</h4>
+                    <p>Hệ thống Vinamilk</p>
+                </div>
+                <img src="img/avt.jpg" alt="Avatar" class="avatar">
+            </div>
+        </header>
+
+        <div class="content-section">
+            <section class="history-section form-card">
+                <div class="section-header flex-between">
+                    <h2 class="page-title">Danh sách Đơn Bán Hàng</h2>
+                    
+                    <div class="filter-group">
+                        <label>Trạng thái:</label>
+                        <select id="salesFilter" onchange="renderSalesTable(this.value)" class="form-control">
+                            <option value="all">Tất cả đơn hàng</option>
+                            <option value="processing" selected>📝 Đang xử lý</option>
+                            <option value="unpaid">⏳ Chưa thanh toán</option>
+                        </select>
+                        <button id="btnCreateSalesOrder" class="btn-primary">
+                            <i class="fas fa-cart-plus"></i> Lên đơn bán hàng
+                        </button>
+                    </div>
+                </div>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Mã đơn</th>
+                            <th>Ngày đặt</th>
+                            <th>Đại lý / Tạp hóa</th>
+                            <th>Tổng tiền (VNĐ)</th>
+                            <th>Trạng thái</th>
+                            <th>Thanh toán</th>   <!-- cột mới -->
+                            <th class="text-center">Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody id="salesTableBody">
+                        </tbody>
+                </table>
+            </section>
+        </div>
+
+        <div id="salesModal" class="modal-overlay">
+            <div class="modal-content modal-lg">
+                <div class="modal-header flex-between">
+                    <h2 class="page-title" id="salesFormTitle">Lập Đơn & Kiểm Tra Tồn Kho</h2>
+                    <span id="closeSalesModal" class="close-modal">&times;</span>
+                </div>
+                
+                <div class="modal-body">
+                    <div class="form-grid col-3">
+                        <div class="form-group">
+                            <label>Mã Đơn Bán</label>
+                            <input type="text" id="salesId" class="form-control input-readonly" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>Ngày xuất</label>
+                            <input type="date" id="salesDate" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Khách hàng/ Tạp hóa</label>
+                            <select id="customerName" class="form-control">
+                                <<option value="Tạp hóa Cô Ba">Tạp hóa Cô Ba</option>
+                                <option value="Siêu thị Mini Mart">Siêu thị Mini Mart</option>
+                                <option value="Đại lý cấp 2 - Quận 1">Đại lý cấp 2 - Quận 1</option>>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div id="stockWarning" class="alert-warning" style="display: none;">
+                        <i class="fas fa-exclamation-triangle"></i> Cảnh báo: Một số mặt hàng không đủ số lượng tồn kho để xuất. Vui lòng kiểm tra lại!
+                    </div>
+
+                    <table class="data-table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Sản phẩm</th>
+                                <th width="120px">Tồn kho HT</th>
+                                <th width="150px">Đơn giá</th>
+                                <th width="100px">SL Bán</th>
+                                <th width="150px">Thành tiền</th>
+                                <th width="50px" class="text-center" id="colSalesAction">Xóa</th>
+                            </tr>
+                        </thead>
+                        <tbody id="salesTableItems">
+                            </tbody>
+                    </table>
+
+                    <button id="btnAddSalesRow" class="btn-add-row">
+                        <i class="fas fa-plus"></i> Thêm mặt hàng
+                    </button>
+
+                    <div class="total-amount" id="orderTotalDisplay">Tổng cộng: 0 VNĐ</div>
+
+                    <div class="form-actions" id="salesActionButtons">
+                        <button id="btnCancelSales" class="btn-cancel">Hủy bỏ</button>
+                        <button id="btnProcessOrder" class="btn-success">
+                            <i class="fas fa-file-invoice-dollar"></i> Lập hóa đơn & Trừ kho
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="js/xuat-hang.js"></script>
+</body>
+</html>

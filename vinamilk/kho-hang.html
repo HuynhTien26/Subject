@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinamilk - Quản lý Kho</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="logo-container">
+            <img src="img/logo-vinamilk.jpg" alt="Vinamilk Logo" class="sidebar-logo">
+            <h3>Hệ thống quản lý đại lý Vinamilk</h3>
+        </div>
+        
+        <nav class="nav-menu">
+            <a href="khach-hang.html" class="nav-link active"><i class="fas fa-users"></i> Khách hàng</a>
+            <a href="nhap-hang.html" class="nav-link"><i class="fas fa-arrow-right-to-bracket"></i> Nhập hàng</a>
+            <a href="xuat-hang.html" class="nav-link"><i class="fas fa-arrow-right-from-bracket"></i> Xuất hàng</a>
+            <a href="kho-hang.html" class="nav-link active"><i class="fas fa-box"></i> Kho hàng</a>
+            <a href="bao-cao.html" class="nav-link"><i class="fas fa-chart-bar"></i> Báo cáo</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <header>
+            <div class="user-profile">
+                <div class="user-info">
+                    <h4>Quản trị viên</h4>
+                    <p>Hệ thống Vinamilk</p>
+                </div>
+                <img src="img/avt.jpg" alt="Avatar" class="avatar">
+            </div>
+        </header>
+
+        <div class="content-section">
+            
+            <section class="form-card alert-section">
+                <div class="section-header flex-between">
+                    <h2 class="page-title text-danger"><i class="fas fa-exclamation-triangle"></i> Quản lý Date & Cảnh báo</h2>
+                    <div class="action-group">
+                        <button class="btn-print" onclick="window.print()"><i class="fas fa-print"></i> In danh sách</button>
+                    </div>
+                </div>
+                <p class="section-desc">Hệ thống tự động quét và bôi đỏ các lô hàng có hạn sử dụng <strong>dưới 30 ngày</strong>.</p>
+                
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Mã Lô</th>
+                            <th>Sản phẩm</th>
+                            <th>Hạn sử dụng</th>
+                            <th>Tồn kho lô</th>
+                            <th>Trạng thái</th>
+                        </tr>
+                    </thead>
+                    <tbody id="batchTableBody">
+                        </tbody>
+                </table>
+            </section>
+
+            <section class="form-card">
+                <div class="section-header flex-between">
+                    <h2 class="page-title">Danh sách Tồn kho Tổng</h2>
+                    <button id="btnOpenAudit" class="btn-success">
+                        <i class="fas fa-clipboard-check"></i> Tạo phiếu Kiểm kê kho
+                    </button>
+                </div>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Mã SP</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Phân loại</th>
+                            <th>Tổng tồn kho (Hệ thống)</th>
+                            <th>Đơn vị tính</th>
+                        </tr>
+                    </thead>
+                    <tbody id="inventoryTableBody">
+                        </tbody>
+                </table>
+            </section>
+        </div>
+
+        <div id="auditModal" class="modal-overlay">
+            <div class="modal-content modal-lg">
+                <div class="modal-header flex-between">
+                    <h2 class="page-title">Phiếu Kiểm Kê Kho Định Kỳ</h2>
+                    <span id="closeAuditModal" class="close-modal">&times;</span>
+                </div>
+                
+                <div class="modal-body">
+                    <div class="form-grid col-3">
+                        <div class="form-group">
+                            <label>Mã phiếu kiểm kê</label>
+                            <input type="text" id="auditId" class="form-control input-readonly" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>Ngày kiểm kê</label>
+                            <input type="date" id="auditDate" class="form-control input-readonly" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>Người thực hiện</label>
+                            <input type="text" id="auditUser" class="form-control input-readonly" value="Quản trị viên" readonly>
+                        </div>
+                    </div>
+
+                    <div class="alert-info">
+                        <i class="fas fa-info-circle"></i> Nhập số lượng đếm được thực tế vào cột "SL Thực Tế". Hệ thống sẽ tự tính độ lệch.
+                    </div>
+
+                    <table class="data-table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Sản phẩm</th>
+                                <th width="120px" class="text-center">SL Hệ Thống</th>
+                                <th width="120px">SL Thực Tế</th>
+                                <th width="100px" class="text-center">Độ lệch</th>
+                                <th width="200px">Ghi chú (Lý do lệch)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="auditTableItems">
+                            </tbody>
+                    </table>
+
+                    <div class="form-actions" style="margin-top: 20px;">
+                        <button id="btnCancelAudit" class="btn-cancel">Hủy bỏ</button>
+                        <button id="btnSaveAudit" class="btn-primary">
+                            <i class="fas fa-save"></i> Xác nhận & Cập nhật tồn kho
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="js/kho-hang.js"></script>
+</body>
+</html>

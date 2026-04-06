@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinamilk - Nhập Hàng</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="logo-container">
+            <img src="img/logo-vinamilk.jpg" alt="Vinamilk Logo" class="sidebar-logo">
+            <h3>Hệ thống quản lý đại lý Vinamilk</h3>
+        </div>
+        
+        <nav class="nav-menu">
+            <a href="khach-hang.html" class="nav-link active"><i class="fas fa-users"></i> Khách hàng</a>
+            <a href="nhap-hang.html" class="nav-link active"><i class="fas fa-arrow-right-to-bracket"></i> Nhập hàng</a>
+            <a href="xuat-hang.html" class="nav-link"><i class="fas fa-arrow-right-from-bracket"></i> Xuất hàng</a>
+            <a href="kho-hang.html" class="nav-link"><i class="fas fa-box"></i> Kho hàng</a>
+            <a href="bao-cao.html" class="nav-link"><i class="fas fa-chart-bar"></i> Báo cáo</a>
+        </nav>
+    </aside>
+
+   <main class="main-content">
+        <header>
+            <div class="user-profile">
+                <div class="user-info">
+                    <h4>Quản trị viên</h4>
+                    <p>Hệ thống Vinamilk</p>
+                </div>
+                <img src="img/avt.jpg" alt="Avatar" class="avatar">
+            </div>
+        </header>
+
+        <div class="inbound-module">
+            
+            <section class="history-section form-card">
+                <div class="section-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <h2 class="page-title" style="margin: 0;">Danh sách Phiếu nhập hàng</h2>
+                    
+                    <div class="filter-group" style="display: flex; gap: 10px; align-items: center;">
+                        <label style="font-weight: 600; color: #555;">Trạng thái:</label>
+                        <select id="statusFilter" onchange="filterOrders(this.value)" style="padding: 8px 15px; border-radius: 8px; border: 1px solid #ddd; outline: none; cursor: pointer;">
+                            <option value="pending" selected>⏳ Đang chờ xác nhận</option>
+                            <option value="completed">✅ Đã hoàn thành</option>
+                            <option value="all">Tất cả phiếu nhập</option>
+                        </select>
+                        
+                        <button id="btnCreateNew" class="btn-save" style="margin-left: 15px;">
+                            <i class="fas fa-plus"></i> Tạo phiếu dự trù mới
+                        </button>
+                    </div>
+                </div>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Mã phiếu</th>
+                            <th>Ngày lập</th>
+                            <th>Nhà cung cấp</th>
+                            <th>Tổng số lượng</th> <th>Trạng thái</th>
+                            <th class="text-center">Thao tác Admin</th>
+                        </tr>
+                    </thead>
+                    <tbody id="historyTableBody">
+                        </tbody>
+                </table>
+            </section>
+        </div>
+
+        <div id="orderModal" class="modal-overlay">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="page-title" id="formTitle" style="margin: 0;">Lập Phiếu Nhập Dự Trù</h2>
+                    <span class="close-modal" id="closeModalBtn">&times;</span>
+                </div>
+                
+                <div class="modal-body">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Mã phiếu</label>
+                            <input type="text" id="orderId" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>Ngày lập dự trù</label>
+                            <input type="date" id="orderDate">
+                        </div>
+                        <div class="form-group">
+                            <label>Nhà cung cấp</label>
+                            <select id="supplier">
+                                <option value="Kho tổng Vinamilk">Kho tổng Vinamilk</option>
+                                <option value="Nhà máy sữa Nghệ An">Nhà máy sữa Nghệ An</option>
+                                <option value="Nhà máy sữa Bình Dương">Nhà máy sữa Bình Dương</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <table class="data-table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Sản phẩm</th>
+                                <th width="150px">Số lượng dự trù</th>
+                                <th>Ghi chú</th>
+                                <th width="80px" class="text-center" id="colAction">Hành động</th>
+                            </tr>
+                        </thead>
+                        <tbody id="productTableBody"></tbody>
+                    </table>
+
+                    <button class="btn-add-row" id="btnAddRow"><i class="fas fa-plus"></i> Thêm mặt hàng</button>
+
+                    <div class="form-actions" id="formActionButtons">
+                        <button class="btn-cancel" id="btnCancelModal">Hủy bỏ</button>
+                        <button class="btn-save" id="btnSaveDraft"><i class="fas fa-save"></i> Gửi phiếu dự trù</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal xem chi tiết phiếu nhập - ĐẶT RA NGOÀI MODAL CHÍNH -->
+        <div id="viewOrderModal" class="modal-overlay" style="display: none;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="page-title" style="margin: 0;">Chi Tiết Phiếu Nhập <span id="viewOrderId" style="color:#0056b3;"></span></h2>
+                    <span class="close-modal" id="closeViewModalBtn">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <table class="data-table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Mã Hàng</th>
+                                <th>Tên Sản Phẩm</th>
+                                <th>Đơn Vị Tính</th>
+                                <th>Số Lượng Nhập</th>
+                            </tr>
+                        </thead>
+                        <tbody id="viewOrderDetailsBody"></tbody>
+                    </table>
+                    <div class="form-actions" style="margin-top: 20px; text-align: right;">
+                        <button class="btn-cancel" id="btnCancelViewModal">Đóng</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

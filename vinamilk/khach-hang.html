@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinamilk - Quản lý Khách hàng</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="logo-container">
+            <img src="img/logo-vinamilk.jpg" alt="Vinamilk Logo" class="sidebar-logo">
+            <h3>Hệ thống quản lý đại lý Vinamilk</h3>
+        </div>
+        
+        <nav class="nav-menu">
+            <a href="khach-hang.html" class="nav-link active"><i class="fas fa-users"></i> Khách hàng</a>
+            <a href="nhap-hang.html" class="nav-link"><i class="fas fa-arrow-right-to-bracket"></i> Nhập hàng</a>
+            <a href="xuat-hang.html" class="nav-link"><i class="fas fa-arrow-right-from-bracket"></i> Xuất hàng</a>
+            <a href="kho-hang.html" class="nav-link"><i class="fas fa-box"></i> Kho hàng</a>
+            <a href="bao-cao.html" class="nav-link"><i class="fas fa-chart-bar"></i> Báo cáo</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <header>
+            <div class="user-profile">
+                <div class="user-info">
+                    <h4>Quản trị viên</h4>
+                    <p>Hệ thống Vinamilk</p>
+                </div>
+                <img src="img/avt.jpg" alt="Avatar" class="avatar">
+            </div>
+        </header>
+
+        <div class="content-section">
+            <section class="history-section form-card">
+                <div class="section-header flex-between">
+                    <h2 class="page-title">Danh sách Khách Hàng & Đại Lý</h2>
+                    
+                    <div class="filter-group">
+                        <button id="btnOpenCustomerModal" class="btn-primary">
+                            <i class="fas fa-user-plus"></i> Thêm Khách Hàng
+                        </button>
+                    </div>
+                </div>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Mã KH</th>
+                            <th>Tên Khách Hàng</th>
+                            <th>Số điện thoại</th>
+                            <th>Địa chỉ</th>
+                            <th class="text-center">Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody id="customerTableBody">
+                        </tbody>
+                </table>
+            </section>
+        </div>
+
+        <div id="customerModal" class="modal-overlay" style="display: none;">
+            <div class="modal-content">
+                <div class="modal-header flex-between">
+                    <h2 class="page-title" id="customerFormTitle" style="margin: 0;">Thêm Khách Hàng Mới</h2>
+                    <span id="closeCustomerModal" class="close-modal">&times;</span>
+                </div>
+                
+                <div class="modal-body">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Mã Khách Hàng</label>
+                            <input type="text" id="customerId" class="form-control input-readonly" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>Tên Khách Hàng / Đại lý <span class="text-danger">*</span></label>
+                            <input type="text" id="customerName" class="form-control" placeholder="Nhập tên khách hàng...">
+                        </div>
+                    </div>
+                    
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Số điện thoại <span class="text-danger">*</span></label>
+                            <input type="tel" id="customerPhone" class="form-control" placeholder="Nhập số điện thoại...">
+                        </div>
+                        <div class="form-group">
+                            <label>Địa chỉ</label>
+                            <input type="text" id="customerAddress" class="form-control" placeholder="Nhập địa chỉ đầy đủ...">
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label>Ghi chú</label>
+                        <input type="text" id="customerNote" class="form-control" placeholder="Ghi chú thêm (nếu có)...">
+                    </div>
+
+                    <div class="form-actions">
+                        <button id="btnCancelCustomer" class="btn-cancel">Hủy bỏ</button>
+                        <button id="btnSaveCustomer" class="btn-success">
+                            <i class="fas fa-save"></i> Lưu Khách Hàng
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="js/khach-hang.js"></script>
+</body>
+</html>
